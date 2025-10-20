@@ -1,7 +1,7 @@
-package tp2exercice;
+package exercice1;
 import java.util.Scanner;
 
-public class person {
+public class exercice1 {
     public static void main(String[] args) {
         Scanner cl = new Scanner(System.in);
 
@@ -41,4 +41,5 @@ public class person {
         cl.close();
     }
 }
+
 
