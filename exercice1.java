@@ -1,31 +1,44 @@
-package exercice1;
-
+package tp2exercice;
 import java.util.Scanner;
 
-public class exercice1{
+public class person {
     public static void main(String[] args) {
         Scanner cl = new Scanner(System.in);
-        boolean ajouter = true;
 
-        do {
-            System.out.println("Entrer le nom :");
+        double maxsalaire = 0;
+        boolean continuer = true;
+
+        while (continuer) {
+            System.out.print("Entrer le nom : ");
             String nom = cl.nextLine();
 
-            System.out.println("Entrer le prenom :");
+            System.out.print("Entrer le prénom : ");
             String prenom = cl.nextLine();
 
-            System.out.println("Entrer l'âge :");
+            System.out.print("Entrer l'âge : ");
             int age = cl.nextInt();
 
-            System.out.println("Entrer le salaire :");
+            System.out.print("Entrer le salaire : ");
             double salaire = cl.nextDouble();
+            cl.nextLine();
 
-            System.out.println("Est-ce que tu veux ajouter un autre employé ? (true/false)");
-            ajouter = cl.nextBoolean();
-            cl.nextLine(); 
+            if (salaire > maxsalaire) {
+                maxsalaire = salaire;
+            }
 
-        } while (ajouter == true);
+            System.out.print("Voulez-vous ajouter un autre employé : ");
+            String reponse = cl.nextLine();
+
+            if (!reponse.equalsIgnoreCase("oui")) {
+                continuer = false;
+            }
+        }
+        System.out.println("Le salaire le plus grand est : " + maxsalaire);
+	}
+
+}
 
         cl.close();
     }
 }
+
